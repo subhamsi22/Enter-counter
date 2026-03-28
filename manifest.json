@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "know your key",
+    "version": "1.0",
+    "description": "know your key",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}
