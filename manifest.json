@@ -1,12 +1,22 @@
 {
     "manifest_version": 3,
-    "name": "know your key",
+    "name": "Enter Counter",
     "version": "1.0",
-    "description": "know your key",
+    "description": "Counts Enter key presses on websites",
+    "permissions": [
+        "storage"
+    ],
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions": [
-        "activeTab"
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
     ]
 }

@@ -1,13 +1,10 @@
-var count = 0;
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        count++;
-        document.getElementById("count").innerText = count;
-    }
+// show count when popup opens
+chrome.storage.local.get("enterCount", (data) => {
+    document.getElementById("count").innerText = data.enterCount || 0;
+});
 
-})
-var btn = document.getElementById("btn");
-btn.addEventListener("click", () => {
-    count = 0;
-    document.getElementById("count").innerText = count;
-})
+// reset button
+document.getElementById("btn").addEventListener("click", () => {
+    chrome.storage.local.set({ enterCount: 0 });
+    document.getElementById("count").innerText = 0;
+});
